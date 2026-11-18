@@ -5,231 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Digital de Patrimonio | Museo Carlos Alonso</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #f9f8f6;
-            --text-color: #2c2a29;
-            --accent-color: #8c6d46;
-            --border-color: #e2dcd5;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding-bottom: 50px;
-        }
-
-        /* Encabezado del Museo */
-        header {
-            background-color: #1a1918;
-            color: #ffffff;
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .museum-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .museum-logo img {
-            height: 44px;
-            width: auto;
-            border-radius: 4px;
-            background-color: #ffffff;
-            padding: 2px;
-        }
-
-        .museum-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Imagen principal de la obra */
-        .main-artifact-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 16px;
-            background-color: #e0e0e0;
-        }
-
-        .catalog-code {
-            font-size: 0.75rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.1rem;
-            margin: 5px 0 15px 0;
-            color: #1a1918;
-            line-height: 1.15;
-        }
-
-        /* Tabla de Ficha Técnica */
-        .tech-sheet {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 24px;
-            font-size: 0.85rem;
-        }
-
-        .tech-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 7px 0;
-            border-bottom: 1px solid #f0ece1;
-        }
-
-        .tech-row:last-child {
-            border-bottom: none;
-        }
-
-        .tech-label {
-            font-weight: 600;
-            color: #666;
-        }
-
-        .description p {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            text-align: justify;
-        }
-
-        /* Galería secundaria */
-        .detail-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 25px 0;
-        }
-
-        .detail-img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 4px;
-            background-color: #e0e0e0;
-        }
-
-        /* Botón con aspecto táctil, sombra y pulso */
-        .btn-reveal {
-            background: linear-gradient(135deg, #9e7b50 0%, #755835 100%);
-            color: #ffffff;
-            border: 1px solid #5e4629;
-            border-bottom: 4px solid #4a3720;
-            padding: 16px 24px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 20rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            box-shadow: 0 6px 15px rgba(140, 109, 70, 0.35);
-            transition: all 0.15s ease;
-            animation: pulseBtn 2.5s infinite;
-        }
-
-        .btn-reveal:active {
-            transform: translateY(3px);
-            border-bottom-width: 1px;
-            box-shadow: 0 2px 8px rgba(140, 109, 70, 0.25);
-        }
-
-        @keyframes pulseBtn {
-            0% { box-shadow: 0 0 0 0 rgba(140, 109, 70, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(140, 109, 70, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(140, 109, 70, 0); }
-        }
-
-        .hidden-content {
-            display: none;
-        }
-
-        /* Sección de la propuesta */
-        .proposal-box {
-            margin-top: 35px;
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            padding: 8px;
-            border-radius: 4px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .proposal-inner {
-            border: 1px solid var(--accent-color);
-            padding: 32px 22px;
-            text-align: center;
-            background-color: #fdfcfb;
-        }
-
-        .proposal-box h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            color: #1a1918;
-            margin-bottom: 14px;
-            line-height: 1.15;
-        }
-
-        .proposal-text {
-            font-size: 0.95rem;
-            color: #4a4745;
-            line-height: 1.75;
-            margin-bottom: 24px;
-        }
-
-        .proposal-signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.4rem;
-            color: var(--accent-color);
-            text-align: right;
-            padding-right: 10px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
 <body>
 
@@ -246,7 +23,7 @@
         <!-- Puse provisoriamente FotoLuz1.jpeg acá arriba para que ya veas cómo carga. Cuando saques la foto del cuadro solo, subila y cambiá este nombre -->
         <img src="images.jpg" alt="Pieza en exhibición" class="main-artifact-img">
 
-        <span class="catalog-code">Registro N° 17-MDZ-2026-LUZ-MONTORO</span>
+        <span class="catalog-code">Registro N° MDZ-17-12-2026-LUZ</span>
         <h1>Nombre Real de la Obra o Artefacto</h1>
 
         <div class="tech-sheet">
@@ -273,7 +50,10 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, porro iure consectetur sunt eos veritatis odio possimus maiores, commodi corporis fuga alias quam iste voluptates officia consequuntur! Non, eos illo.            </p>
             
             <p>
-                Sin embargo, cualquier análisis queda en segundo plano frente a quien está del otro lado. Enfrente de esta obra, recorriendo este museo hoy conmigo.
+                Sin embargo, cualquier análisis queda en segundo plano frente a quien está del otro lado. Enfrente de esta obra, recorriendo este museo hoy conmigo. <br><br>
+                Alguien que se destaca por una inteligencia notable, una bondad genuina y un corazón incomparable. Excelente en su labor como arqueóloga, 
+                combina dulzura, ternura y una humildad admirable —aunque la propia protagonista insista en no reconocerlo—. 
+                Más allá de cualquier obra exhibida hoy, es indiscutiblemente la más hermosa de toda la sala.
             </p>
         </div>
 
@@ -294,7 +74,7 @@
                 <h2>Luz, ¿querés ser mi novia?</h2>
                 
                 <p class="proposal-text">
-                    Me gustaría empezar un camino con vos y acompañarte en todas las excavaciones, cafés, salidas a la montaña y aventuras que se vengan. Te quiero mucho♥️.
+                    Me encantaría empezar un camino con vos y acompañarte en todas las excavaciones, museos, salidas a la montaña y aventuras que se vengan. Te quiero mucho♥️.
                 </p>
                 
                 <p class="proposal-signature">— El Santi</p>
